@@ -13,6 +13,8 @@
 		827857B21CC784F70083E154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827857B01CC784F70083E154 /* Main.storyboard */; };
 		827857B41CC784F70083E154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 827857B31CC784F70083E154 /* Assets.xcassets */; };
 		827857B71CC784F70083E154 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827857B51CC784F70083E154 /* LaunchScreen.storyboard */; };
+		827857C11CC790920083E154 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 827857BF1CC790920083E154 /* CollectionViewCell.m */; };
+		827857C21CC790920083E154 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827857C01CC790920083E154 /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		827857B31CC784F70083E154 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		827857B61CC784F70083E154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		827857B81CC784F70083E154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		827857BE1CC790920083E154 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		827857BF1CC790920083E154 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		827857C01CC790920083E154 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +72,9 @@
 				827857B51CC784F70083E154 /* LaunchScreen.storyboard */,
 				827857B81CC784F70083E154 /* Info.plist */,
 				827857A71CC784F70083E154 /* Supporting Files */,
+				827857BE1CC790920083E154 /* CollectionViewCell.h */,
+				827857BF1CC790920083E154 /* CollectionViewCell.m */,
+				827857C01CC790920083E154 /* CollectionViewCell.xib */,
 			);
 			path = "testEvernote-oc";
 			sourceTree = "<group>";
@@ -138,6 +146,7 @@
 			files = (
 				827857B71CC784F70083E154 /* LaunchScreen.storyboard in Resources */,
 				827857B41CC784F70083E154 /* Assets.xcassets in Resources */,
+				827857C21CC790920083E154 /* CollectionViewCell.xib in Resources */,
 				827857B21CC784F70083E154 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +160,7 @@
 			files = (
 				827857AF1CC784F70083E154 /* ViewController.m in Sources */,
 				827857AC1CC784F70083E154 /* AppDelegate.m in Sources */,
+				827857C11CC790920083E154 /* CollectionViewCell.m in Sources */,
 				827857A91CC784F70083E154 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +310,7 @@
 				827857BD1CC784F70083E154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
