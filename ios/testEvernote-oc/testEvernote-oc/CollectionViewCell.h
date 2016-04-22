@@ -14,8 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIView *titleLine;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lableLeadCons;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *lableLeadCons;
 
-@property (nonatomic) NSLayoutConstraint *horizonallyCons;
+@property (strong, nonatomic) NSLayoutConstraint *horizonallyCons;
 
 @end

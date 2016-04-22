@@ -10,6 +10,7 @@
 #import "CollectionViewCell.h"
 #import "NoteViewController.h"
 #import "EvernoteTransition.h"
+#import "CollectionViewLayout.h"
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property(weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -25,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     self.customTransition = [[EvernoteTransition alloc] init];
     self.colorArray = [NSMutableArray new];
     
@@ -90,6 +92,23 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     self.selectIndexPath = indexPath;
     [self performSegueWithIdentifier:@"PresentNoteViewController" sender:self];
+    
+//    CollectionViewCell *cell = (CollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+//    NSArray *visibleCells = [self.collectionView visibleCells];
+//    
+//    NoteViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NoteViewController"];
+//    vc.titleName = cell.titleLabel.text;
+//    vc.domainColor = cell.backgroundColor;
+//    
+//    CGRect finalFrame = CGRectMake(10, self.collectionView.contentOffset.y + 10, CGRectGetWidth([UIScreen mainScreen].bounds) - 20, CGRectGetHeight([UIScreen mainScreen].bounds) - 40);
+//    
+//    [self.customTransition evernoteTransitionWithSelectCell:cell visibleCells:visibleCells originFrame:cell.frame finalFrame:finalFrame panViewController:vc listViewController:self];
+//    vc.transitioningDelegate = self.customTransition;
+//    vc.delegate = self.customTransition;
+//    
+//    [self presentViewController:vc animated:YES completion:^{
+//        
+//    }];
 }
 
 @end

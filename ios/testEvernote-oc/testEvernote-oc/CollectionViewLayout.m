@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        self.itemSize = CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 2 * 10, 45);
+        self.itemSize = CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 2 * 10, 104);
         self.headerReferenceSize = CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds), 10);
     }
     return self;
@@ -24,7 +24,7 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        self.itemSize = CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 2 * 10, 45);
+        self.itemSize = CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 2 * 10, 104);
         self.headerReferenceSize = CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds), 10);
     }
     return self;
@@ -44,22 +44,30 @@
     CGFloat bottomOffset = offsetY + collectionViewFrameHeight - collectionViewContentHeight - scrollViewContentInsetBottom;
     NSInteger numOfItems = self.collectionView.numberOfSections;
     
+    NSMutableArray *arr = [NSMutableArray new];
+    
     for (UICollectionViewLayoutAttributes *attr in attrsArray) {
         if (attr.representedElementCategory == UICollectionElementCategoryCell) {
-            CGRect cellRect = attr.frame;
+            //修改属性，需要进行copy，否则会在log中报错（This is likely occurring because the flow layout subclass CollectionViewLayout is modifying attributes returned by UICollectionViewFlowLayout without copying them）
+            UICollectionViewLayoutAttributes *attrCopy = [attr copy];
+            CGRect cellRect = attrCopy.frame;
             if (offsetY <= 0) {
                 CGFloat distance = fabs(offsetY) / 10;
-                cellRect.origin.y += offsetY + distance * (attr.indexPath.section + 1);
+                cellRect.origin.y += offsetY + distance * (attrCopy.indexPath.section + 1);
             } else if (bottomOffset > 0) {
                 CGFloat distance = bottomOffset / 10;
-                cellRect.origin.y += bottomOffset - distance * (numOfItems - attr.indexPath.section);
+                cellRect.origin.y += bottomOffset - distance * (numOfItems - attrCopy.indexPath.section);
             }
             
-            attr.frame = cellRect;
+            attrCopy.frame = cellRect;
+            [arr addObject:attrCopy];
+        } else {
+            [arr addObject:attr];
         }
+        
     }
     
-    return attrsArray;
+    return arr;
 }
 
 @end

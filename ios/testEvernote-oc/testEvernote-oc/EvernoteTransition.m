@@ -10,6 +10,16 @@
 
 @implementation EvernoteTransition
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.interactiveController = [[UIPercentDrivenInteractiveTransition alloc] init];
+        self.selectCell = [[CollectionViewCell alloc] init];
+    }
+    return self;
+}
+
 - (void)evernoteTransitionWithSelectCell:(CollectionViewCell *)cell visibleCells:(NSArray *)visibleCells originFrame:(CGRect)originFrame finalFrame:(CGRect)finalFrame panViewController:(UIViewController *)panViewController listViewController:(UIViewController *)listViewController {
     self.selectCell = cell;
     self.visibleCells = visibleCells;
@@ -20,10 +30,6 @@
     UIScreenEdgePanGestureRecognizer *pan = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     pan.edges = UIRectEdgeLeft;
     [self.panViewController.view addGestureRecognizer:pan];
-    
-    if (!self.interactiveController) {
-        self.interactiveController = [[UIPercentDrivenInteractiveTransition alloc] init];
-    }
 }
 
 #pragma mark - 
@@ -55,7 +61,7 @@
 
 #pragma mark - UIViewControllerAnimatedTransitioning
 - (NSTimeInterval)transitionDuration:(nullable id <UIViewControllerContextTransitioning>)transitionContext {
-    return 0.45;
+    return 0.5;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
@@ -72,7 +78,7 @@
     [self.selectCell removeConstraint:removeCons];
     [self.selectCell addConstraint:addCons];
     
-    [UIView animateKeyframesWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateKeyframesWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
         for (CollectionViewCell * cell in self.visibleCells) {
             if (cell != self.selectCell) {
                 CGRect frame = cell.frame;
@@ -119,6 +125,9 @@
 
 #pragma mark - NoteViewControllerDelegate
 - (void)didClickGoBack {
+    [self.panViewController dismissViewControllerAnimated:YES completion:^{
+        
+    }];
     [self finishInteractive];
 }
 

@@ -20,16 +20,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xSb-55-Cga">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <collectionViewLayout key="collectionViewLayout" id="mSX-Cv-EEx" customClass="CollectionViewLayout"/>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AQU-AY-AFr">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="xyH-kj-1Lw"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="iQB-9u-1bB"/>
@@ -77,12 +68,13 @@
         <!--Note View Controller-->
         <scene sceneID="Cvo-zs-YwV">
             <objects>
-                <viewController id="jft-na-6Qi" customClass="NoteViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteViewController" id="jft-na-6Qi" customClass="NoteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LzJ-5J-YcW"/>
                         <viewControllerLayoutGuide type="bottom" id="Lvy-1Q-GJm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6zA-Sy-Doq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNL-Sm-pRb">
@@ -126,17 +118,28 @@
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VsH-VH-mei">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <string key="text">亲爱的小伙伴：
+
+          本月OA系统的考勤在4月27日 0时自动提交，建议小伙伴们提前处理完毕所有异常，并确保流程节点涉及到的领导在自动提交时间前全部审批完毕。
+
+如有任何问题欢迎登陆“龙图之家”企业文化公众号，查看我们的考勤宝典哦！
+
+注：考勤数据一经确认，不可再更改，未审批归档的考勤将于下月补回，由此产生的个税差异由个人自行承担
+
+       此邮件为系统自动邮件，请勿回复。</string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7v-RK-1hg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7v-RK-1hg">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Ucq-pH-umj"/>
                                             <constraint firstAttribute="width" constant="100" id="lMA-KZ-RXy"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="back"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Ucq-pH-umj"/>
@@ -177,11 +180,11 @@
                                         <exclude reference="O7v-RK-1hg"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="1pt-zf-2LS"/>
+                                        <exclude reference="lxo-V1-tRc"/>
                                         <exclude reference="36U-43-cxF"/>
                                         <exclude reference="Cjz-M6-jCK"/>
                                         <exclude reference="mhF-hc-O4V"/>
-                                        <exclude reference="1pt-zf-2LS"/>
-                                        <exclude reference="lxo-V1-tRc"/>
                                         <exclude reference="6ac-a1-hdC"/>
                                         <exclude reference="VsJ-8F-s5w"/>
                                         <exclude reference="bVC-FU-st6"/>
@@ -199,11 +202,11 @@
                                         <include reference="O7v-RK-1hg"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="1pt-zf-2LS"/>
+                                        <include reference="lxo-V1-tRc"/>
                                         <include reference="36U-43-cxF"/>
                                         <include reference="Cjz-M6-jCK"/>
                                         <include reference="mhF-hc-O4V"/>
-                                        <include reference="1pt-zf-2LS"/>
-                                        <include reference="lxo-V1-tRc"/>
                                         <include reference="6ac-a1-hdC"/>
                                         <include reference="VsJ-8F-s5w"/>
                                         <include reference="bVC-FU-st6"/>
@@ -227,10 +230,10 @@
                                 <exclude reference="rNL-Sm-pRb"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="WQI-ef-rzC"/>
                                 <exclude reference="49C-c6-f5j"/>
                                 <exclude reference="EfD-NF-H6I"/>
                                 <exclude reference="VJW-wv-LxB"/>
-                                <exclude reference="WQI-ef-rzC"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -238,10 +241,10 @@
                                 <include reference="rNL-Sm-pRb"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="WQI-ef-rzC"/>
                                 <include reference="49C-c6-f5j"/>
                                 <include reference="EfD-NF-H6I"/>
                                 <include reference="VJW-wv-LxB"/>
-                                <include reference="WQI-ef-rzC"/>
                             </mask>
                         </variation>
                     </view>
@@ -253,7 +256,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdY-OR-bSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="366"/>
+            <point key="canvasLocation" x="1330.5" y="321.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="11" height="24"/>
+    </resources>
 </document>

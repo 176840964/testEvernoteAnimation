@@ -16,18 +16,26 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0J7-Br-cZL">
                         <rect key="frame" x="15" y="0.0" width="42" height="45"/>
                         <constraints>
+                            <constraint firstAttribute="width" constant="42" id="nxI-P3-Rw6"/>
                             <constraint firstAttribute="height" constant="45" id="vm0-rZ-VnS"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nxI-P3-Rw6"/>
+                            </mask>
+                        </variation>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjs-qh-7IS">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjs-qh-7IS">
                         <rect key="frame" x="0.0" y="0.0" width="41" height="45"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="45" id="Y4W-Ow-IAe"/>
                             <constraint firstAttribute="width" constant="41" id="nAQ-e8-kmt"/>
                         </constraints>
+                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" image="back"/>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ju-go-XTk">
                         <rect key="frame" x="5" y="45" width="315" height="2"/>
@@ -38,7 +46,17 @@
                     </view>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pkg-aP-Df3">
                         <rect key="frame" x="0.0" y="47" width="320" height="57"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <string key="text">亲爱的小伙伴：
+
+          本月OA系统的考勤在4月27日 0时自动提交，建议小伙伴们提前处理完毕所有异常，并确保流程节点涉及到的领导在自动提交时间前全部审批完毕。
+
+如有任何问题欢迎登陆“龙图之家”企业文化公众号，查看我们的考勤宝典哦！
+
+注：考勤数据一经确认，不可再更改，未审批归档的考勤将于下月补回，由此产生的个税差异由个人自行承担
+
+       此邮件为系统自动邮件，请勿回复。</string>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
@@ -65,6 +83,10 @@
                 <outlet property="titleLabel" destination="0J7-Br-cZL" id="J7P-h8-DWi"/>
                 <outlet property="titleLine" destination="6Ju-go-XTk" id="Yha-AQ-ddH"/>
             </connections>
+            <point key="canvasLocation" x="279" y="240"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="back" width="11" height="24"/>
+    </resources>
 </document>
