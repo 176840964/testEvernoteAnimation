@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        self.itemSize = CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 2 * 10, 104);
+        self.itemSize = CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 2 * 10, 45);
         self.headerReferenceSize = CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds), 10);
     }
     return self;
@@ -24,7 +24,7 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        self.itemSize = CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 2 * 10, 104);
+        self.itemSize = CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 2 * 10, 45);
         self.headerReferenceSize = CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds), 10);
     }
     return self;

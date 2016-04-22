@@ -16,7 +16,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0J7-Br-cZL">
                         <rect key="frame" x="15" y="0.0" width="42" height="45"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="42" id="nxI-P3-Rw6"/>
+                            <constraint firstAttribute="width" constant="54" id="nxI-P3-Rw6"/>
                             <constraint firstAttribute="height" constant="45" id="vm0-rZ-VnS"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -73,9 +73,15 @@
                 <constraint firstItem="Vjs-qh-7IS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cq4-gy-NPh"/>
                 <constraint firstItem="6Ju-go-XTk" firstAttribute="top" secondItem="0J7-Br-cZL" secondAttribute="bottom" id="mi0-nC-dTp"/>
                 <constraint firstItem="Vjs-qh-7IS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qhP-I6-7C7"/>
+                <constraint firstAttribute="trailing" secondItem="0J7-Br-cZL" secondAttribute="trailing" constant="15" id="sil-oC-DtV"/>
                 <constraint firstItem="0J7-Br-cZL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="tRu-9w-mhV"/>
                 <constraint firstItem="0J7-Br-cZL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xhr-Qd-sAS"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="sil-oC-DtV"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="backButton" destination="Vjs-qh-7IS" id="D7M-MO-sTT"/>
                 <outlet property="lableLeadCons" destination="tRu-9w-mhV" id="RKo-N5-U3R"/>

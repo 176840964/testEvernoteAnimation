@@ -18,9 +18,7 @@
     // Initialization code
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 5.0;
-    
     self.horizonallyCons = [NSLayoutConstraint constraintWithItem:self.titleLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
-    
 }
 
 @end
